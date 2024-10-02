@@ -1,27 +1,42 @@
-#container {
+.home-content {
+  --background: #f0f0f0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  height: 100vh;
   text-align: center;
-
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
+  padding: 0;
 }
 
-#container strong {
-  font-size: 20px;
-  line-height: 26px;
+.header {
+  background-color: #3971b5; /* Azul para la cabecera */
+  width: 100%;
+  padding: 20px 0;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
 }
 
-#container p {
+.button-grid {
+  margin-top: 50px;
+  width: 90%;
+  max-width: 400px;
+}
+
+ion-button.menu-button {
+  --background: #3971b5; /* Color azul de los botones */
+  --background-hover: #2c5d8e; /* Azul más oscuro al pasar el cursor */
+  --background-activated: #1e4b76;
+  color: white;
+  height: 60px;
   font-size: 16px;
-  line-height: 22px;
-
-  color: #8c8c8c;
-
-  margin: 0;
+  margin-bottom: 15px;
+  border-radius: 10px;
 }
 
-#container a {
-  text-decoration: none;
+.logout-button {
+  color: white; // Cambia el color del texto del botón a blanco
+  --background: transparent; // Fondo transparente si deseas que sea solo el icono
+  --border-color: transparent; // Sin borde
 }

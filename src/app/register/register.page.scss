@@ -1,0 +1,57 @@
+.register-content {
+    --background: #f0f0f0; /* Fondo gris claro */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+  }
+  
+  .header {
+    background-color: #3971b5; /* Azul para la cabecera */
+    width: 100%;
+    padding: 20px 0;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  .form-container {
+    width: 90%;
+    max-width: 350px;
+    background-color: #fff; /* Fondo blanco para el formulario */
+    border-radius: 15px; /* Esquinas redondeadas */
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  }
+  
+  .input-item {
+    color: #413f3f;
+    --background: #f7f7f7; /* Fondo gris claro para los campos */
+    --highlight-color-focused: #3971b5; /* Azul al enfocarse */
+    margin-bottom: 15px;
+    border-radius: 15px; /* Esquinas redondeadas */
+  }
+  
+  ion-label {
+    color: #666; /* Color gris para los títulos de los campos */
+    font-size: 14px;
+    font-weight: bold;
+  }
+  
+  ion-input {
+    color: #000; /* Texto negro dentro del campo */
+    --padding-start: 15px;
+    --padding-end: 15px;
+  }
+  
+  .register-button {
+    color: #fff;
+    --background: #004aad;
+    --background-focused: #003f8a;
+    margin-top: 15px;
+    border-radius: 10px; /* Esquinas redondeadas del botón */
+  }
+  
+  

@@ -1,0 +1,76 @@
+.login-content {
+    --background: linear-gradient(to bottom, #021832, #1776f3); /* Fondo azul degradado */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+  }
+  
+  .logo-container {
+    margin-bottom: 20px;
+  }
+  
+  .logo {
+    width: 120px;
+    margin-bottom: 10px;
+  }
+  
+  .app-title {
+    color: #fff;
+    font-size: 24px;
+    font-weight: bold;
+    margin: 0;
+  }
+  
+  .app-subtitle {
+    color: #fff;
+    font-size: 14px;
+    margin-top: 5px;
+  }
+  
+  .form-container {
+    width: 90%;
+    max-width: 350px;
+    background-color: #fff;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .input-item {
+    color: #413f3f;
+    --background: #f9f9f9;
+    --highlight-color-focused: #004aad;
+    margin-bottom: 15px;
+    border-radius: 15px;  /* Añadir esquinas redondeadas */
+  }
+  
+  ion-label {
+    color: #000000; /* Color azul para el título */
+    font-size: 18px;
+    font-weight: bold;
+    padding: 10px;
+  }
+  
+  ion-input {
+    color: #000; /* Texto negro dentro del campo */
+    --padding-start: 15px;
+    --padding-end: 15px;
+  }
+  
+  .login-button {
+    color: #fff;
+    --background: #004aad;
+    --background-focused: #003f8a;
+    margin-top: 10px;
+    border-radius: 10px; /* Esquinas redondeadas del botón */
+  }
+  
+  .footer-text {
+    color: #fff;
+    margin-top: 20px;
+    font-size: 12px;
+  }
+  

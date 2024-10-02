@@ -1,20 +1,31 @@
-<ion-header [translucent]="true">
+<ion-header>
   <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
+    <ion-title class="header">Menú Principal</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="onLogout()" color="light" class="logout-button">
+        <ion-icon name="log-out"></ion-icon>
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+<ion-content class="home-content">
+  <ion-grid class="button-grid">
+    <ion-row>
+      <ion-col size="6">
+        <ion-button class="menu-button" routerLink="/inventario">Inventario</ion-button>
+      </ion-col>
+      <ion-col size="6">
+        <ion-button class="menu-button" routerLink="/categories">Categorías</ion-button>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="6">
+        <ion-button class="menu-button" routerLink="/reports">Reportes</ion-button>
+      </ion-col>
+      <ion-col size="6">
+        <ion-button class="menu-button" routerLink="/users">Usuarios</ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>
