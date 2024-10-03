@@ -35,7 +35,22 @@ const routes: Routes = [
   {
     path: 'users',
     loadChildren: () => import('./users/users.module').then( m => m.UsersPageModule)
-  }
+  },
+  {
+    path: 'stock',
+    loadChildren: () => import('./stock/stock.module').then( m => m.StockPageModule)
+  },
+  {
+    path: 'producto',
+    loadChildren: () => import('./producto/producto.module').then( m => m.ProductoPageModule)
+  },
+  {
+    path: 'reportes',
+    loadChildren: () => import('./reportes/reportes.module').then( m => m.ReportesPageModule)
+  },
+  { path: 'stock', loadChildren: () => import('./stock/stock.module').then(m => m.StockPageModule) },
+  { path: 'producto', loadChildren: () => import('./producto/producto.module').then(m => m.ProductoPageModule) },
+  { path: 'reportes', loadChildren: () => import('./reportes/reportes.module').then(m => m.ReportesPageModule) }
 ];
 
 @NgModule({

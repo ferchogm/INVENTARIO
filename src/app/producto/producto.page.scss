@@ -1,10 +1,8 @@
-/* inventario.page.scss */
-
 ion-content {
     --background: var(--ion-color-light); /* Fondo claro */
   }
-  
-  .back-button {
+
+.back-button {
     position: fixed;
     bottom: 20px; /* Distancia desde la parte inferior */
     left: 20px;   /* Distancia desde la parte izquierda */
@@ -18,8 +16,9 @@ ion-content {
     justify-content: center;
     align-items: center;
   }
+
   
-  .inventario-content {
+  .producto-content {
     --background: #f0f0f0;
     display: flex;
     flex-direction: column;
@@ -39,6 +38,12 @@ ion-content {
     font-weight: bold;
   }
 
+  .logout-button {
+    color: white; // Cambia el color del texto del botón a blanco
+    --background: transparent; // Fondo transparente si deseas que sea solo el icono
+    --border-color: transparent; // Sin borde
+  }
+
   ion-button.menu-button {
     --background: #3971b5; /* Color azul de los botones */
     --background-hover: #2c5d8e; /* Azul más oscuro al pasar el cursor */
@@ -48,16 +53,4 @@ ion-content {
     font-size: 16px;
     margin-bottom: 15px;
     border-radius: 10px;
-  }
-
-  .button-grid {
-    margin-top: 50px;
-    width: 90%;
-    max-width: 400px;
-  }
-  
-  .logout-button {
-    color: white; // Cambia el color del texto del botón a blanco
-    --background: transparent; // Fondo transparente si deseas que sea solo el icono
-    --border-color: transparent; // Sin borde
   }

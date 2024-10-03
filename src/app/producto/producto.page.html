@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title class="header">Productos</ion-title>
+    <!-- Botón de salida en la parte superior derecha -->
+    <ion-buttons slot="end">
+      <ion-button (click)="logout()" color="light" class="logout-button"> 
+        <ion-icon name="log-out-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="producto-content">
+  <ion-grid class="button-grid">
+    <ion-row>
+      <ion-col>
+        <ion-button class="menu-button" expand="block" shape="round" (click)="addProduct()" >Adicionar</ion-button>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-button class="menu-button" expand="block" shape="round" (click)="deleteProduct()" >Eliminar</ion-button>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-button  class="menu-button" expand="block" shape="round" (click)="consultProduct()" >Consulta</ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <!-- Botón de regresar a la página de inventarios en la parte inferior izquierda -->
+  <ion-button (click)="goBackToInventario()" class="back-button">
+    <ion-icon name="arrow-back-outline"></ion-icon>
+  </ion-button>
+</ion-content>
