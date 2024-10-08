@@ -1,13 +1,32 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>categories</ion-title>
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title class="header">CATEGORIAS</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="onLogout()" color="light" class="logout-button">
+        <ion-icon name="log-out"></ion-icon>
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">categories</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content class="inventario-content">
+  <ion-grid class="button-grid">
+    
+    <ion-row>
+      <ion-col>
+        <ion-button class="menu-button" expand="block" shape="round">Adicionar categoria</ion-button>
+      </ion-col>
+    </ion-row>
+    
+    <ion-row>
+      <ion-col>
+        <ion-button class="menu-button" expand="block" shape="round" >Eliminar categoria</ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  
+  <!-- Botón de retroceso en la parte inferior izquierda -->
+  <ion-button (click)="goBackToMenu()" class="back-button">
+    <ion-icon name="arrow-back-outline"></ion-icon>
+  </ion-button>
 </ion-content>

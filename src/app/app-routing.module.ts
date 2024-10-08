@@ -54,7 +54,11 @@ const routes: Routes = [
   {
     path: 'producto-add',
     loadChildren: () => import('./producto-add/producto-add.module').then( m => m.ProductoAddPageModule)
+  },  {
+    path: 'categories',
+    loadChildren: () => import('./categories/categories.module').then( m => m.CategoriesPageModule)
   }
+
 ];
 
 @NgModule({
