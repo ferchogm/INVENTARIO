@@ -15,6 +15,6 @@ import { CategoriesPage } from './categories.page';
     IonicModule,
     CategoriesPageRoutingModule
   ],
-  declarations: [CategoriesPage]
+  declarations: [CategoriesPage],
 })
 export class CategoriesPageModule {}
