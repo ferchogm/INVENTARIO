@@ -12,7 +12,7 @@ export class CategoriesPage implements OnInit {
 
     onLogout() {
       // Aquí puedes realizar la lógica para cerrar sesión
-      // Por ejemplo, eliminar tokens de autenticación o información de usuario.
+      // Por ejemplo, eliminar tokens de autenticación o información de usuario. 
   
       // Redirigir al usuario a la página de inicio de sesión
       this.router.navigate(['/login']);
