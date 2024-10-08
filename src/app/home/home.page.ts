@@ -11,7 +11,7 @@ export class HomePage {
   constructor(private router: Router, private firestore: AngularFirestore) {}
 
   onLogout() {
-    //comentario prueba
+    //comentario prueba - prueba MOISES
     // Aquí puedes realizar la lógica para cerrar sesión
     // Por ejemplo, eliminar tokens de autenticación o información de usuario.
 
