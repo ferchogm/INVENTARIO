@@ -37,6 +37,7 @@ ion-content {
   color: white;
   font-size: 18px;
   font-weight: bold;
+  text-align: center; /* Centrar el texto */
 }
 
 ion-button.menu-button {
@@ -57,16 +58,7 @@ ion-button.menu-button {
 }
 
 .logout-button {
-  color: white; // Cambia el color del textoasdsdsd del botón a blanco
+  color: white; // Cambia el color del texto del botón a blanco
   --background: transparent; // Fondo transparente si deseas que sea solo el icono
   --border-color: transparent; // Sin borde
-}
-
-.header {
-  background-color: #3971b5; /* Azul para la cabecera */
-  width: 100%;
-  padding: 20px 0;
-  color: white;
-  font-size: 18px;
-  font-weight: bold;
 }
