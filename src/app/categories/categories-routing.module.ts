@@ -7,7 +7,12 @@ const routes: Routes = [
   {
     path: '',
     component: CategoriesPage
+  },
+  {
+    path: 'categoriesadd',
+    loadChildren: () => import('./categoriesadd/categoriesadd.module').then( m => m.CategoriesaddPageModule)
   }
+
 ];
 
 @NgModule({

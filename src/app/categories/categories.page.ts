@@ -25,4 +25,8 @@ export class CategoriesPage implements OnInit {
   ngOnInit() {
   }
 
+  goCategoriesAdd(){
+    this.router.navigate(['/categories-add']);
+  }
+
 }

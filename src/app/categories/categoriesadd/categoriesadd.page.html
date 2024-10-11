@@ -11,21 +11,19 @@
 
 <ion-content class="inventario-content">
   <ion-grid class="button-grid">
-    
     <ion-row>
       <ion-col>
-        <ion-button routerLink="/categories/categoriesadd" class="menu-button" expand="block" shape="round">Adicionar categoria</ion-button>
+        <ion-input [(ngModel)]="newCategoryName" placeholder="Nombre de la categoría"></ion-input>
       </ion-col>
     </ion-row>
-    
     <ion-row>
       <ion-col>
-        <ion-button class="menu-button" expand="block" shape="round" >Eliminar categoria</ion-button>
+        <ion-button (click)="addCategory()" class="menu-button" expand="block" shape="round">Adicionar categoría</ion-button>
       </ion-col>
     </ion-row>
   </ion-grid>
   
-  <!-- Botón de retroceso en la parte infsdsderior izquierda -->
+  <!-- Botón de retroceso en la parte inferior izquierda -->
   <ion-button (click)="goBackToMenu()" class="back-button">
     <ion-icon name="arrow-back-outline"></ion-icon>
   </ion-button>
