@@ -23,12 +23,14 @@ export class CategoriesaddPage implements OnInit {
   }
 
   addCategory() {
+    
     if (this.newCategoryName.trim().length === 0) {
       this.router.navigate(['/error'], { queryParams: { message: 'El nombre de la categoría no puede estar vacío' } });
       return;
     }
 
     try {
+      //
       // await this.categoryService.addCategory(this.newCategoryName);
 
       this.router.navigate(['/success'], { queryParams: { message: 'Categoría creada correctamente' } });
