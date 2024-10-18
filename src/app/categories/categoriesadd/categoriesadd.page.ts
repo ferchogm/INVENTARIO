@@ -11,7 +11,7 @@ export class CategoriesaddPage implements OnInit {
   constructor(private router: Router) {}
 
   onLogout() {
-    // Aquí puedes realizar la lógica para cerrar sesión
+    // Aquí puedes realizar la lógica para cerrar sesión - PRUEBA DE GIT
     // Por ejemplo, eliminar tokens de autenticación o información de usuario. 
 
     // Redirigir al usuario a la página de inicio de sesión
