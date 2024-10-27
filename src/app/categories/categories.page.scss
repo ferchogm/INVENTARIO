@@ -105,3 +105,8 @@ ion-input {
 .categories-table tr:hover {
   background-color: #75b1fa;
 }
+
+.actions {
+  display: flex;
+  gap: 5px; /* Espacio entre los botones */
+}

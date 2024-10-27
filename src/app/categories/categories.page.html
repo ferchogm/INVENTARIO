@@ -37,15 +37,15 @@
                 <ion-input [(ngModel)]="category.name" [readonly]="!category.isEditing"></ion-input>
               </td>
               <td>{{ category.createdAt?.toDate() | date: 'short' }}</td>
-              <td>
+              <td class="actions">
                 <ion-button color="primary" (click)="editCategory(category)" *ngIf="!category.isEditing">
-                  <i class="bi bi-pencil"></i>
+                  <ion-icon slot="icon-only" name="pencil-outline"></ion-icon>
                 </ion-button>
                 <ion-button color="success" (click)="saveCategory(category)" *ngIf="category.isEditing">
-                  <i class="bi bi-check-lg"></i>
+                  <ion-icon slot="icon-only" name="checkmark-outline"></ion-icon>
                 </ion-button>
                 <ion-button color="danger" (click)="deleteCategory(category.name)">
-                  <i class="bi bi-trash"></i>
+                  <ion-icon slot="icon-only" name="trash-outline"></ion-icon>
                 </ion-button>
               </td>
             </tr>

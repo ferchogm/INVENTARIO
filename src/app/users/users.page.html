@@ -1,13 +1,45 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>users</ion-title>
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title class="header">Usuarios</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">users</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content class="inventario-content">
+  <ion-grid class="button-grid">
+    <ion-row>
+      <ion-col>
+        <ion-button (click)="addUser()" class="menu-button" expand="block" shape="round">Crear Usuario</ion-button>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <table class="users-table">
+          <thead>
+            <tr>
+              <th>Nombre</th>
+              <th>Email</th>
+              <th>Rol</th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let user of users">
+              <td>{{ user.name }}</td>
+              <td>{{ user.email }}</td>
+              <td>{{ user.role }}</td>
+              <td class="actions">
+                <ion-button color="danger" (click)="deleteUser(user.id)">
+                  <ion-icon slot="icon-only" name="trash-outline"></ion-icon>
+                </ion-button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-button (click)="goBackToMenu()" class="back-button">
+    <ion-icon name="arrow-back-outline"></ion-icon>
+  </ion-button>
 </ion-content>
