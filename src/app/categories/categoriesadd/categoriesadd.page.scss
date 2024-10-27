@@ -78,3 +78,30 @@ ion-content {
     font-size: 16px;
     color: #333;
   }
+
+  .categories-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  .categories-table th, .categories-table td {
+    border: 1px solid #ffffff;
+    padding: 8px;
+    text-align: left;
+  }
+  
+  .categories-table th {
+    background-color: #3971b5;
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+  }
+  
+  .categories-table //tr:nth-child(even)
+   {
+    background-color: rgb(92, 151, 213);
+  }
+  
+  .categories-table tr:hover {
+    background-color: #989898;
+  }

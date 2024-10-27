@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { AngularFirestore } from '@angular/fire/compat/firestore';
+import { AlertController } from '@ionic/angular';
 
 @Component({
   selector: 'app-categoriesadd',
@@ -8,10 +10,21 @@ import { Router } from '@angular/router';
 })
 export class CategoriesaddPage implements OnInit {
   newCategoryName: string = '';
-  constructor(private router: Router) {}
+  categories: any[] = [];
+
+  constructor(
+    private firestore: AngularFirestore,
+    private router: Router,
+    private alertController: AlertController
+  ) {}
+
+  ngOnInit() {
+    this.loadCategories();
+  }
+
 
   onLogout() {
-    // Aquí puedes realizar la lógica para cerrar sesión - PRUEBA DE GIT
+    // Aquí puedes realizar la lógica para cerrar sesión
     // Por ejemplo, eliminar tokens de autenticación o información de usuario. 
 
     // Redirigir al usuario a la página de inicio de sesión
@@ -22,24 +35,46 @@ export class CategoriesaddPage implements OnInit {
     this.router.navigate(['/categories']);
   }
 
-  addCategory() {
-    
-    if (this.newCategoryName.trim().length === 0) {
-      this.router.navigate(['/error'], { queryParams: { message: 'El nombre de la categoría no puede estar vacío' } });
-      return;
-    }
-
+  async addCategory() {
     try {
-      //
-      // await this.categoryService.addCategory(this.newCategoryName);
+      if (this.newCategoryName.trim().length === 0) {
+        this.showAlert('Error', 'El nombre de la categoría no puede estar vacío');
+        return;
+      }
 
-      this.router.navigate(['/success'], { queryParams: { message: 'Categoría creada correctamente' } });
-      this.newCategoryName = '';
+      const newCategory = {
+        name: this.newCategoryName,
+        createdAt: new Date()
+      };
+
+      await this.firestore.collection('categories').add(newCategory);
+
+      this.showAlert('Éxito', 'Categoría creada correctamente');
+      this.newCategoryName = ''; 
     } catch (error) {
-      this.router.navigate(['/error'], { queryParams: { message: 'Error al crear la categoría' } });
+      this.showAlert('Error', 'Error al crear la categoría');
     }
   }
-ngOnInit() {
-}
+  async loadCategories() {
+    try {
+      const snapshot = await this.firestore.collection('categories').get().toPromise();
+      if (snapshot) {
+        this.categories = snapshot.docs.map(doc => doc.data());
+      } else {
+        this.categories = [];
+      }
+    } catch (error) {
+      console.error('Error al cargar las categorías:', error);
+      this.categories = [];
+    }
+  }
+  async showAlert(header: string, message: string) {
+    const alert = await this.alertController.create({
+      header: header,
+      message: message,
+      buttons: ['OK']
+    });
 
+    await alert.present();
+  }
 }

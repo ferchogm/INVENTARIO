@@ -4,12 +4,11 @@ import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { AlertController } from '@ionic/angular';
 
 @Component({
-  selector: 'app-categories',
-  templateUrl: './categories.page.html',
-  styleUrls: ['./categories.page.scss'],
+  selector: 'app-categoriesremove',
+  templateUrl: './categoriesremove.page.html',
+  styleUrls: ['./categoriesremove.page.scss'],
 })
-export class CategoriesPage implements OnInit {
-  newCategoryName: string = '';
+export class CategoriesremovePage implements OnInit {
   categories: any[] = [];
 
   constructor(
@@ -31,49 +30,20 @@ export class CategoriesPage implements OnInit {
   }
 
   goBackToMenu() {
-    this.router.navigate(['/home']);
+    this.router.navigate(['/categories']);
   }
 
   async loadCategories() {
     try {
       const snapshot = await this.firestore.collection('categories').get().toPromise();
       if (snapshot) {
-        this.categories = snapshot.docs.map(doc => {
-          const data = doc.data();
-          if (typeof data === 'object' && data !== null) {
-            return { ...data, id: doc.id, isEditing: false };
-          } else {
-            return { id: doc.id, isEditing: false };
-          }
-        });
+        this.categories = snapshot.docs.map(doc => doc.data());
       } else {
         this.categories = [];
       }
     } catch (error) {
       console.error('Error al cargar las categorías:', error);
       this.categories = [];
-    }
-  }
-
-  async addCategory() {
-    try {
-      if (this.newCategoryName.trim().length === 0) {
-        this.showAlert('Error', 'El nombre de la categoría no puede estar vacío');
-        return;
-      }
-
-      const newCategory = {
-        name: this.newCategoryName,
-        createdAt: new Date()
-      };
-
-      await this.firestore.collection('categories').add(newCategory);
-
-      this.showAlert('Éxito', 'Categoría creada correctamente');
-      this.newCategoryName = ''; 
-      this.loadCategories(); // Recargar las categorías después de agregar una
-    } catch (error) {
-      this.showAlert('Error', 'Error al crear la categoría');
     }
   }
 
@@ -95,21 +65,6 @@ export class CategoriesPage implements OnInit {
       this.loadCategories(); // Recargar las categorías después de eliminar una
     } catch (error) {
       this.showAlert('Error', 'Error al eliminar la categoría');
-    }
-  }
-
-  editCategory(category: any) {
-    category.isEditing = true;
-  }
-
-  async saveCategory(category: any) {
-    try {
-      await this.firestore.collection('categories').doc(category.id).update({ name: category.name });
-      category.isEditing = false;
-      this.showAlert('Éxito', 'Categoría actualizada correctamente');
-      this.loadCategories(); // Recargar las categorías después de editar una
-    } catch (error) {
-      this.showAlert('Error', 'Error al actualizar la categoría');
     }
   }
 
