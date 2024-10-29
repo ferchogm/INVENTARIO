@@ -1,6 +1,6 @@
 <ion-header>
   <ion-toolbar color="primary">
-    <ion-title class="header">GESTIONAR CATEGORIAS</ion-title>
+    <ion-title class="header">CATEGORIAS</ion-title>
     <ion-buttons slot="end">
       <ion-button (click)="onLogout()" color="light" class="logout-button">
         <ion-icon name="log-out"></ion-icon>
@@ -12,7 +12,7 @@
 <ion-content class="inventario-content">
   <ion-grid class="button-grid">
     <ion-row>
-      <ion-col class="input-field">
+      <ion-col>
         <ion-input [(ngModel)]="newCategoryName" placeholder="Nombre de la categoría"></ion-input>
       </ion-col>
     </ion-row>
@@ -28,33 +28,18 @@
             <tr>
               <th>Nombre de la Categoría</th>
               <th>Fecha de Creación</th>
-              <th>Acciones</th>
             </tr>
           </thead>
           <tbody>
             <tr *ngFor="let category of categories">
-              <td>
-                <ion-input [(ngModel)]="category.name" [readonly]="!category.isEditing"></ion-input>
-              </td>
+              <td>{{ category.name }}</td>
               <td>{{ category.createdAt?.toDate() | date: 'short' }}</td>
-              <td class="actions">
-                <ion-button color="primary" (click)="editCategory(category)" *ngIf="!category.isEditing">
-                  <ion-icon slot="icon-only" name="pencil-outline"></ion-icon>
-                </ion-button>
-                <ion-button color="success" (click)="saveCategory(category)" *ngIf="category.isEditing">
-                  <ion-icon slot="icon-only" name="checkmark-outline"></ion-icon>
-                </ion-button>
-                <ion-button color="danger" (click)="deleteCategory(category.name)">
-                  <ion-icon slot="icon-only" name="trash-outline"></ion-icon>
-                </ion-button>
-              </td>
             </tr>
           </tbody>
         </table>
       </ion-col>
     </ion-row>
   </ion-grid>
-  
   <!-- Botón de retroceso en la parte inferior izquierda -->
   <ion-button (click)="goBackToMenu()" class="back-button">
     <ion-icon name="arrow-back-outline"></ion-icon>

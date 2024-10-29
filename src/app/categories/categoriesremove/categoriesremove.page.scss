@@ -1,4 +1,4 @@
-/* categories.page.scss */
+/* categoriesremove.page.scss */
 
 ion-content {
   --background: var(--ion-color-light); /* Fondo claro */
@@ -98,15 +98,11 @@ ion-input {
   font-weight: bold;
 }
 
-.categories-table tr:nth-child(even) {
+.categories-table //tr:nth-child(even) 
+{
   background-color: #5681b7;
 }
 
 .categories-table tr:hover {
-  background-color: #75b1fa;
-}
-
-.actions {
-  display: flex;
-  gap: 5px; /* Espacio entre los botones */
+  background-color: #ddd;
 }
