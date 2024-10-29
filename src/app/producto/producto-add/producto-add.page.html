@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/producto"></ion-back-button>
+    </ion-buttons>
+    <ion-title class="header">ADICIONAR PRODUCTO</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="logout()">
+        <ion-icon name="log-out-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="inventario-content">
+  <ion-item class="input-item">
+    <ion-label position="floating">ID Producto</ion-label>
+    <ion-input [(ngModel)]="product.barcode"></ion-input>
+  </ion-item>
+
+  <ion-button class="menu-button" expand="block" shape="round" (click)="scanBarcode()">ESCANEAR</ion-button>
+
+  <ion-item class="input-item">
+    <ion-label position="floating">Nombre de Producto</ion-label>
+    <ion-input [(ngModel)]="product.name"></ion-input>
+  </ion-item>
+
+  <ion-item class="input-item">
+    <ion-label>Categoría</ion-label>
+    <ion-select [(ngModel)]="product.category" name="category" placeholder="Seleccionar categoría">
+      <ion-select-option *ngFor="let category of categories" [value]="category.name">{{ category.name }}</ion-select-option>
+    </ion-select>
+  </ion-item>
+
+  <ion-item class="input-item">
+    <ion-label position="floating">Cantidad de productos nuevos</ion-label>
+    <ion-input type="number" [(ngModel)]="product.stock"></ion-input>
+  </ion-item>
+
+  <ion-button class="menu-button" expand="block" shape="round" (click)="addProduct()">ADICIONAR</ion-button>
+
+</ion-content>
