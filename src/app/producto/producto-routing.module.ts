@@ -7,7 +7,20 @@ const routes: Routes = [
   {
     path: '',
     component: ProductoPage
+  },
+  {
+    path: 'producto-add',
+    loadChildren: () => import('./producto-add/producto-add.module').then( m => m.ProductoAddPageModule)
+  },
+  {
+    path: 'producto-delete',
+    loadChildren: () => import('./producto-delete/producto-delete.module').then( m => m.ProductoDeletePageModule)
+  },
+  {
+    path: 'producto-list',
+    loadChildren: () => import('./producto-list/producto-list.module').then( m => m.ProductoListPageModule)
   }
+
 ];
 
 @NgModule({

@@ -12,7 +12,7 @@ export class ProductoPage {
 
   // Navegar a la página de agregar producto
   addProduct() {
-    console.log("Navegando a la página de adicionar producto");
+    this.router.navigate(['/producto-add']);
     // Aquí puedes agregar la lógica para abrir la página de agregar productos
   }
 

@@ -1,0 +1,43 @@
+ion-content {
+    --background: var(--ion-color-light); /* Fondo claro */
+  }
+
+.header {
+    justify-content: center;
+    background-color: #3971b5; /* Azul para la cabecera */
+    width: 100%;
+    padding: 20px 0;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+  }
+
+  .inventario-content {
+    --background: #f0f0f0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+    padding: 0;
+  }
+
+  ion-button.menu-button {
+    --background: #3971b5; /* Color azul de los botones */
+    --background-hover: #2c5d8e; /* Azul más oscuro al pasar el cursor */
+    --background-activated: #1e4b76;
+    color: white;
+    height: 60px;
+    font-size: 16px;
+    margin-bottom: 15px;
+    border-radius: 10px;
+  }
+
+  .input-item {
+    color: #413f3f;
+    --background: #f7f7f7; /* Fondo gris claro para los campos */
+    --highlight-color-focused: #3971b5; /* Azul al enfocarse */
+    margin-bottom: 15px;
+    border-radius: 15px; /* Esquinas redondeadas */
+  }
