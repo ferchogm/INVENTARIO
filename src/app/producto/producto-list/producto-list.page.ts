@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
-import { jsPDF } from 'jspdf';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-producto-list',
@@ -10,28 +10,38 @@ import { jsPDF } from 'jspdf';
 export class ProductoListPage implements OnInit {
   products: any[] = [];
 
-  constructor(private firestore: AngularFirestore) {}
+  constructor(private firestore: AngularFirestore, private router: Router) {}
 
   ngOnInit() {
     this.getProducts();
   }
 
   getProducts() {
-    this.firestore.collection('products').snapshotChanges().subscribe(res => {
-      this.products = res.map(product => {
-        const data = product.payload.doc.data() as any;
-        const id = product.payload.doc.id;
-        return { id, ...data };
+    this.firestore
+      .collection('products')
+      .snapshotChanges()
+      .subscribe((data) => {
+        this.products = data.map((doc) => {
+          return { id: doc.payload.doc.id, ...(doc.payload.doc.data() as object) };
+        });
       });
-    });
   }
 
-  exportPDF() {
-    const doc = new jsPDF();
-    doc.text('Reporte de Productos', 10, 10);
-    this.products.forEach((product, index) => {
-      doc.text(`${index + 1}. ${product.name} (${product.category}) - Stock: ${product.stock}`, 10, 20 + (index * 10));
-    });
-    doc.save('reporte_productos.pdf');
+  deleteProduct(id: string) {
+    this.firestore
+      .collection('products')
+      .doc(id)
+      .delete()
+      .then(() => {
+        console.log('Producto eliminado con éxito');
+      })
+      .catch((error) => {
+        console.error('Error al eliminar el producto: ', error);
+      });
+  }
+
+  editProduct(product: any) {
+    // Navega a la página de edición pasando el ID del producto como parámetro
+    this.router.navigate(['/producto-edit', product.id]);
   }
 }

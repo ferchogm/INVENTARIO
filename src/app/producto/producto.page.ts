@@ -24,7 +24,7 @@ export class ProductoPage {
 
   // Consultar producto
   consultProduct() {
-    console.log("Navegando a la página de consulta de productos");
+    this.router.navigate(['/producto-list']);
     // Aquí puedes agregar la lógica para abrir la página de consultar productos
   }
 
