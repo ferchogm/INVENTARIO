@@ -4,6 +4,7 @@ import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { AlertController } from '@ionic/angular';
 import { ToastController } from '@ionic/angular';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router'; 
 
 @Component({
   selector: 'app-producto-add',
@@ -24,7 +25,8 @@ export class ProductoAddPage implements OnInit  {
     private barcodeScanner: BarcodeScanner,
     private firestore: AngularFirestore,
     private alertController: AlertController,
-    private toastCtrl: ToastController
+    private toastCtrl: ToastController,
+    private router: Router
   ) {}
 
   ngOnInit() {
@@ -93,5 +95,8 @@ export class ProductoAddPage implements OnInit  {
   // Método ficticio para logout, si no es necesario puedes eliminarlo
   logout() {
     this.presentToast('Logout');
+    this.router.navigate(['/login']);
   }
 }
+
+

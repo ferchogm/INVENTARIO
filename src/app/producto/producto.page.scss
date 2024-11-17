@@ -30,6 +30,7 @@ ion-content {
   }
 
   .header {
+    text-align: center;
     justify-content: center;
     background-color: #3971b5; /* Azul para la cabecera */
     width: 100%;
@@ -54,4 +55,10 @@ ion-content {
     font-size: 16px;
     margin-bottom: 15px;
     border-radius: 10px;
+  }
+
+  .button-grid {
+    margin-top: 50px;
+    width: 90%;
+    max-width: 400px;
   }
