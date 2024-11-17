@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title class="header">ELIMINAR CATEGORIAS</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="onLogout()" color="light" class="logout-button">
+        <ion-icon name="log-out"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="inventario-content">
+  <ion-grid class="button-grid">
+    <ion-row>
+      <ion-col>
+        <table class="categories-table">
+          <thead>
+            <tr>
+              <th>Nombre de la Categoría</th>
+              <th>Fecha de Creación</th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let category of categories">
+              <td>{{ category.name }}</td>
+              <td>{{ category.createdAt?.toDate() | date: 'short' }}</td>
+              <td>
+                <ion-button color="danger" (click)="deleteCategory(category.name)">Eliminar</ion-button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  
+  <!-- Botón de retroceso en la parte inferior izquierda -->
+  <ion-button (click)="goBackToMenu()" class="back-button">
+    <ion-icon name="arrow-back-outline"></ion-icon>
+  </ion-button>
+</ion-content>

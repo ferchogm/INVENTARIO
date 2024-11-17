@@ -29,18 +29,17 @@ ion-content {
     text-align: center;
     padding: 0;
   }
-
+  
   .header {
-    text-align: center;
-    justify-content: center;
-    background-color: #3971b5; /* Azul para la cabecera */
+    background-color: #3971b5; /* Azul para la cabecera Tested*/
     width: 100%;
     padding: 20px 0;
     color: white;
     font-size: 18px;
     font-weight: bold;
+    text-align: center; /* Centrar el texto */
   }
-
+  
   ion-button.menu-button {
     --background: #3971b5; /* Color azul de los botones */
     --background-hover: #2c5d8e; /* Azul más oscuro al pasar el cursor */
@@ -51,7 +50,7 @@ ion-content {
     margin-bottom: 15px;
     border-radius: 10px;
   }
-
+  
   .button-grid {
     margin-top: 50px;
     width: 90%;
@@ -62,4 +61,47 @@ ion-content {
     color: white; // Cambia el color del texto del botón a blanco
     --background: transparent; // Fondo transparente si deseas que sea solo el icono
     --border-color: transparent; // Sin borde
+  }
+
+  .input-field {
+    width: 100%;
+    margin-bottom: 15px;
+  }
+  
+  ion-input {
+    --padding-start: 15px;
+    --padding-end: 15px;
+    --background: #ffffff;
+    --border-radius: 10px;
+    --box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    height: 60px;
+    font-size: 16px;
+    color: #333;
+  }
+
+  .categories-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  .categories-table th, .categories-table td {
+    border: 1px solid #ffffff;
+    padding: 8px;
+    text-align: left;
+  }
+  
+  .categories-table th {
+    background-color: #3971b5;
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+  }
+  
+  .categories-table //tr:nth-child(even)
+   {
+    background-color: rgb(92, 151, 213);
+  }
+  
+  .categories-table tr:hover {
+    background-color: #989898;
   }
