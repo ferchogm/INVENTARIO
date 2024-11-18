@@ -5,14 +5,14 @@ import { ToastController } from '@ionic/angular';
 import { Router } from '@angular/router'; 
 
 @Component({
-  selector: 'app-stock-entrada',
+  selector: 'app-stock-salida',
   templateUrl: './stock-salida.page.html',
   styleUrls: ['./stock-salida.page.scss'],
 })
 export class StockSalidaPage {
   barcode: string = ''; // Código de barras o ID del producto
   product: any = null; // Producto consultado
-  quantityToAdd: number | null = null; // Cantidad a incrementar
+  quantityToAdd: number | null = null; // Cantidad a decrementar
 
   constructor(
     private barcodeScanner: BarcodeScanner,
@@ -55,6 +55,14 @@ export class StockSalidaPage {
   addStock() {
     if (!this.product || this.quantityToAdd === null || this.quantityToAdd <= 0) {
       this.presentToast('Por favor complete el formulario correctamente.');
+      return;
+    }
+
+    // Validar que el stock restante no sea menor a 0
+    if (this.quantityToAdd > this.product.stock) {
+      this.presentToast(
+        `No se puede disminuir el stock. La cantidad a retirar (${this.quantityToAdd}) supera el stock disponible (${this.product.stock}).`
+      );
       return;
     }
 
