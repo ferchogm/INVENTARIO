@@ -61,7 +61,6 @@ const routes: Routes = [
 
   { path: 'stock', loadChildren: () => import('./stock/stock.module').then(m => m.StockPageModule) },
   { path: 'producto', loadChildren: () => import('./producto/producto.module').then(m => m.ProductoPageModule) },
-  { path: 'reportes', loadChildren: () => import('./reportes/reportes.module').then(m => m.ReportesPageModule) },
   { path: 'categories',loadChildren: () => import('./categories/categories.module').then( m => m.CategoriesPageModule)},
   { path: 'producto-add', loadChildren: () => import('./producto/producto-add/producto-add.module').then(m => m.ProductoAddPageModule) }, 
   { path: 'producto-delete', loadChildren: () => import('./producto/producto-delete/producto-delete.module').then(m => m.ProductoDeletePageModule) },

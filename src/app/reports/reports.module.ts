@@ -1,11 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-
 import { IonicModule } from '@ionic/angular';
-
 import { ReportsPageRoutingModule } from './reports-routing.module';
-
 import { ReportsPage } from './reports.page';
 
 @NgModule({
@@ -13,8 +10,8 @@ import { ReportsPage } from './reports.page';
     CommonModule,
     FormsModule,
     IonicModule,
-    ReportsPageRoutingModule
+    ReportsPageRoutingModule,
   ],
-  declarations: [ReportsPage]
+  declarations: [ReportsPage], // Asegúrate de declarar la clase aquí
 })
 export class ReportsPageModule {}

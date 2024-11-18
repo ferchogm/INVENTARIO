@@ -1,0 +1,123 @@
+.content-wrapper {
+    padding: 16px;
+    display: flex;
+    justify-content: center;
+  }
+
+  ion-content {
+    --background: #f0f0f0; /* Fondo claro */
+  }
+
+  /* Contenedor con scroll horizontal si la tabla excede el ancho */
+.table-container {
+    overflow-x: auto; /* Habilita desplazamiento horizontal */
+    padding: 16px; /* Espaciado interno */
+  }
+  
+  /* Tabla ajustada al contenedor */
+  .product-table {
+    width: 100%; /* Ocupa todo el ancho disponible */
+    border-collapse: collapse; /* Elimina espacio entre bordes */
+    min-width: 600px; /* Evita que la tabla sea demasiado pequeña */
+  }
+  
+
+  .header {
+    text-align: center;
+    justify-content: center;
+    background-color: #3971b5; /* Azul para la cabecera */
+    width: 100%;
+    padding: 20px 0;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    }
+  
+
+  .reportes-content {
+    --background: #f0f0f0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+    padding: 0;
+  }
+
+  
+  .product-table {
+    width: 100%;
+    max-width: 800px;
+    border-collapse: collapse;
+    margin: 0 auto;
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(85, 103, 194, 0.1);
+    color: #4a4a4a;
+  }
+  
+  .product-table th,
+  .product-table td {
+    text-align: left;
+    padding: 12px 16px;
+    border-bottom: 1px solid #eaeaea;
+    color: #4a4a4a;
+  }
+  
+  .product-table th {
+    background-color: #f8f9fa;
+    font-weight: bold;
+    color: #4a4a4a;
+  }
+  
+  .product-table tr:hover {
+    background-color: #f1f3f5;
+  }
+  
+  ion-button {
+    margin: 0 4px;
+  }
+  
+  /* Estilos responsivos */
+@media (max-width: 768px) {
+    thead th,
+    tbody td {
+      font-size: 12px; /* Texto más pequeño en pantallas móviles */
+    }
+    ion-button {
+      font-size: 10px;
+    }
+  }
+
+  .back-button {
+    position: fixed;
+    bottom: 20px; /* Distancia desde la parte inferior */
+    left: 20px;   /* Distancia desde la parte izquierda */
+    z-index: 100; /* Asegúrate de que esté encima de otros elementos */
+    background-color: var(--ion-color-primary); /* Color del botón */
+    color: white;
+    border-radius: 50%; /* Botón redondo */
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .button-grid {
+    margin-top: 50px;
+    width: 90%;
+    max-width: 400px;
+  }
+
+  ion-button.menu-button {
+    --background: #3971b5; /* Color azul de los botones */
+    --background-hover: #2c5d8e; /* Azul más oscuro al pasar el cursor */
+    --background-activated: #1e4b76;
+    color: white;
+    height: 60px;
+    font-size: 16px;
+    margin-bottom: 15px;
+    border-radius: 10px;
+  }

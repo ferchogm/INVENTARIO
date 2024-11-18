@@ -1,13 +1,40 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>reports</ion-title>
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-button (click)="goToHome()" color="light">
+        <ion-icon name="home-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title class="header">Reportes</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="logout()" color="light" class="logout-button"> 
+        <ion-icon name="log-out-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">reports</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content class="reportes-content">
+  <ion-grid class="button-grid">
+    <ion-row>
+      <ion-col>
+        <ion-button class="menu-button" expand="block" shape="round" (click)="generateProductReport()">Reporte de Productos</ion-button>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-button class="menu-button" expand="block" shape="round" (click)="generateCategoryReport()">Reporte de Categorías</ion-button>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-button  class="menu-button" expand="block" shape="round" (click)="generateUserReport()">Reporte de Usuarios</ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <!-- Botón de retroceso en la parte inferior izquierda -->
+  <ion-button (click)="goBackToMenu()" class="back-button">
+    <ion-icon name="arrow-back-outline"></ion-icon>
+  </ion-button>
+
 </ion-content>
