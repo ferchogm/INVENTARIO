@@ -128,4 +128,9 @@ export class ProductoAddPage implements OnInit  {
     this.presentToast('Logout');
     this.router.navigate(['/login']);
   }
+
+  goToHome() {
+    this.router.navigate(['/home']); // Reemplaza '/home' por la ruta correspondiente a tu menú principal
+  }
+
 }

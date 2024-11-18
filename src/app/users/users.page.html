@@ -1,6 +1,18 @@
 <ion-header>
   <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-button (click)="goToHome()" color="light">
+        <ion-icon name="home-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
     <ion-title class="header">Usuarios</ion-title>
+
+  <!-- Botón de salida en la parte superior derecha -->
+  <ion-buttons slot="end">
+    <ion-button (click)="logout()" color="light" class="logout-button"> 
+      <ion-icon name="log-out-outline"></ion-icon>
+    </ion-button>
+  </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
@@ -39,7 +51,8 @@
     </ion-row>
   </ion-grid>
 
-  <ion-button (click)="goBackToMenu()" class="back-button">
+  <!-- Botón de regresar a la página de inventarios en la parte inferior izquierda -->
+  <ion-button (click)="goBackToInventario()" class="back-button">
     <ion-icon name="arrow-back-outline"></ion-icon>
   </ion-button>
 </ion-content>

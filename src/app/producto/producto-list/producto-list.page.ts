@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { Router } from '@angular/router';
+import { ToastController } from '@ionic/angular';
+import { AlertController } from '@ionic/angular';
 import { jsPDF } from 'jspdf';
 import 'jspdf-autotable'; // Importar el plugin para tablas
 
@@ -13,7 +15,7 @@ import 'jspdf-autotable'; // Importar el plugin para tablas
 export class ProductoListPage implements OnInit {
   products: any[] = [];
 
-  constructor(private firestore: AngularFirestore, private router: Router) {}
+  constructor(private firestore: AngularFirestore, private router: Router,private toastCtrl: ToastController, private alertController: AlertController) {}
 
   ngOnInit() {
     this.getProducts();
@@ -81,5 +83,22 @@ export class ProductoListPage implements OnInit {
     pdf.save('productos.pdf');
   }
   
-  
+ // Método para mostrar un toast
+ async presentToast(message: string) {
+  const toast = await this.toastCtrl.create({
+    message: message,
+    duration: 2000,
+  });
+  await toast.present();
+}
+
+  // Método ficticio para logout, si no es necesario puedes eliminarlo
+  logout() {
+    this.presentToast('Logout');
+    this.router.navigate(['/login']);
+  }
+
+  goToHome() {
+    this.router.navigate(['/home']); // Reemplaza '/home' por la ruta correspondiente a tu menú principal
+  }
 }

@@ -1,8 +1,22 @@
-<ion-content class="register-content">
-  <div class="header">
-    CREAR UNA CUENTA
-  </div>
+<ion-header>
+  <ion-toolbar color="primary">
 
+    <ion-buttons slot="start">
+      <ion-button (click)="goToHome()" color="light">
+        <ion-icon name="home-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    
+    <ion-title class="header">Registro Usuario</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="logout()" color="light" class="logout-button"> 
+        <ion-icon name="log-out-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="inventario-content">
   <div class="form-container">
     <ion-item class="input-item">
       <ion-label position="stacked">Correo Electrónico</ion-label>
@@ -35,4 +49,8 @@
 
     <ion-button expand="block" class="register-button" (click)="onRegister()">REGISTRAR CUENTA</ion-button>
   </div>
+  <!-- Botón de retroceso en la parte inferior izquierda -->
+  <ion-button (click)="goBackToMenu()" class="back-button">
+    <ion-icon name="arrow-back-outline"></ion-icon>
+  </ion-button>
 </ion-content>

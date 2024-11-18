@@ -92,9 +92,18 @@ export class StockSalidaPage {
     await toast.present();
   }
 
-  // Método ficticio para logout, si no es necesario puedes eliminarlo
+  // Regresar a la página de inventarios
+  goBackToInventario() {
+    this.router.navigate(['/inventario']);
+  }
+
+  // Cerrar sesión
   logout() {
-    this.presentToast('Logout');
-    this.router.navigate(['/login']);
+    console.log("Cerrando sesión");
+    // Aquí va la lógica para cerrar sesión
+  }
+
+  goToHome() {
+    this.router.navigate(['/home']); // Reemplaza '/home' por la ruta correspondiente a tu menú principal
   }
 }

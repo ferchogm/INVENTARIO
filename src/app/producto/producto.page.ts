@@ -38,4 +38,9 @@ export class ProductoPage {
     console.log("Cerrando sesión");
     // Aquí va la lógica para cerrar sesión
   }
+
+  goToHome() {
+    this.router.navigate(['/home']); // Reemplaza '/home' por la ruta correspondiente a tu menú principal
+  }
+
 }

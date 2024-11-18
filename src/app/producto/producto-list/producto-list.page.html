@@ -1,9 +1,14 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-button (click)="goToHome()" color="light">
+        <ion-icon name="home-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
     <ion-title class="header">LISTA DE PRODUCTOS</ion-title>
     <ion-buttons slot="end">
-      <ion-button routerLink="/producto-add">
-        <ion-icon name="add-circle-outline"></ion-icon>
+      <ion-button (click)="logout()" color="light" class="logout-button"> 
+        <ion-icon name="log-out-outline"></ion-icon>
       </ion-button>
     </ion-buttons>
   </ion-toolbar>

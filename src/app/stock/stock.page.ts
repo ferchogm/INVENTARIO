@@ -30,10 +30,14 @@ export class StockPage implements OnInit {
     this.router.navigate(['/inventario']);
   }
 
-  // Cerrar sesión
-  logout() {
+   // Cerrar sesión
+   logout() {
     console.log("Cerrando sesión");
     // Aquí va la lógica para cerrar sesión
+  }
+
+  goToHome() {
+    this.router.navigate(['/home']); // Reemplaza '/home' por la ruta correspondiente a tu menú principal
   }
 
   ngOnInit(): void {

@@ -1,9 +1,16 @@
 <ion-header>
   <ion-toolbar color="primary">
+
+    <ion-buttons slot="start">
+      <ion-button (click)="goToHome()" color="light">
+        <ion-icon name="home-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    
     <ion-title class="header">Inventarios</ion-title>
     <ion-buttons slot="end">
-      <ion-button (click)="onLogout()" color="light" class="logout-button">
-        <ion-icon name="log-out"></ion-icon>
+      <ion-button (click)="logout()" color="light" class="logout-button"> 
+        <ion-icon name="log-out-outline"></ion-icon>
       </ion-button>
     </ion-buttons>
   </ion-toolbar>
