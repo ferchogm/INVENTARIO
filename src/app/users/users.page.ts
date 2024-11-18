@@ -56,7 +56,7 @@ export class UsersPage implements OnInit {
   async addUser() {
     // Aquí puedes agregar la lógica para crear un nuevo usuario
     // Por ejemplo, redirigir a una página de creación de usuario
-    this.router.navigate(['/create-user']);
+    this.router.navigate(['/register']);
   }
 
   async deleteUser(userId: string) {
