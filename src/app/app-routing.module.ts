@@ -52,7 +52,12 @@ const routes: Routes = [
   {
     path: 'stock-entrada',
     loadChildren: () => import('./stock/stock-entrada/stock-entrada.module').then(m => m.StockEntradaPageModule)
-  },  
+  }, 
+  
+  {
+    path: 'stock-salida',
+    loadChildren: () => import('./stock/stock-salida/stock-salida.module').then(m => m.StockSalidaPageModule)
+  },
 
   { path: 'stock', loadChildren: () => import('./stock/stock.module').then(m => m.StockPageModule) },
   { path: 'producto', loadChildren: () => import('./producto/producto.module').then(m => m.ProductoPageModule) },

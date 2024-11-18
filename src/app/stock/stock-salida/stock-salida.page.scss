@@ -1,0 +1,74 @@
+ion-content {
+    --background: var(--ion-color-light); /* Fondo claro */
+  }
+  
+  .content-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centra verticalmente */
+    align-items: center; /* Centra horizontalmente */
+    height: 100%; /* Ocupa toda la altura de la pantalla */
+    max-width: 500px; /* Ancho máximo en pantallas grandes */
+    margin: 0 auto; /* Centra horizontalmente */
+    padding: 20px;
+    background-color: #ffffff; /* Fondo blanco opcional */
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra para destacar */
+  }
+  
+  .header {
+  text-align: center;
+  justify-content: center;
+  background-color: #3971b5; /* Azul para la cabecera */
+  width: 100%;
+  padding: 20px 0;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  }
+  
+  .inventario-content {
+    --background: #f0f0f0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+    padding: 0;
+  }
+  
+  ion-button.menu-button {
+    --background: #3971b5; /* Color azul de los botones */
+    --background-hover: #2c5d8e; /* Azul más oscuro al pasar el cursor */
+    --background-activated: #1e4b76;
+    color: white;
+    height: 60px;
+    font-size: 16px;
+    margin-bottom: 15px;
+    border-radius: 10px;
+  }
+  
+  .input-item {
+    color: #413f3f;
+    --background: #f7f7f7; /* Fondo gris claro para los campos */
+    --highlight-color-focused: #3971b5; /* Azul al enfocarse */
+    border-radius: 15px; /* Esquinas redondeadas */
+    width: 100%; /* Asegura que ocupe todo el ancho disponible */
+  margin-bottom: 15px;
+  }
+  
+  .back-button {
+    position: fixed;
+    bottom: 20px; /* Distancia desde la parte inferior */
+    left: 20px;   /* Distancia desde la parte izquierda */
+    z-index: 100; /* Asegúrate de que esté encima de otros elementos */
+    background-color: var(--ion-color-primary); /* Color del botón */
+    color: white;
+    border-radius: 50%; /* Botón redondo */
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }

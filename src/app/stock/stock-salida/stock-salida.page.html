@@ -1,0 +1,52 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-title class="header">Salida de Producto</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="logout()">
+        <ion-icon name="log-out-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="inventario-content">
+  <div class="content-wrapper">
+  <!-- Formulario para buscar el producto -->
+  <ion-item class="input-item">
+    <ion-label position="floating">ID Producto / Código de Barras</ion-label>
+    <ion-input [(ngModel)]="barcode"></ion-input>
+  </ion-item>
+  <ion-button class="menu-button" expand="block" shape="round" (click)="scanBarcode()">
+    Escanear Código de Barras
+  </ion-button>
+  <ion-button class="menu-button" expand="block" color="primary" shape="round" (click)="consultProduct()">
+    Consultar Producto
+  </ion-button>
+
+  <!-- Mostrar datos del producto si se encuentra -->
+  <div *ngIf="product">
+    <ion-item class="input-item">
+      <ion-label>Nombre:</ion-label>
+      <ion-text>{{ product.name }}</ion-text>
+    </ion-item>
+    <ion-item class="input-item">
+      <ion-label>Categoría:</ion-label>
+      <ion-text>{{ product.category }}</ion-text>
+    </ion-item>
+    <ion-item class="input-item">
+      <ion-label>Stock Actual:</ion-label>
+      <ion-text>{{ product.stock }}</ion-text>
+    </ion-item>
+    <ion-item class="input-item">
+      <ion-label position="floating">Cantidad a Salir</ion-label>
+      <ion-input type="number" [(ngModel)]="quantityToAdd"></ion-input>
+    </ion-item>
+    <ion-button class="menu-button" expand="block" color="success" shape="round" (click)="addStock()">
+      Salida de Producto
+    </ion-button>
+  </div>
+</div>
+</ion-content>
