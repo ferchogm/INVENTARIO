@@ -48,6 +48,10 @@ export class ProductoListPage implements OnInit {
     this.router.navigate(['/producto-edit', product.id]);
   }
 
+  goBackToMenu() {
+    this.router.navigate(['/producto']);
+  }
+
   exportToPDF() {
     const pdf = new jsPDF(); // Crear instancia de jsPDF
   

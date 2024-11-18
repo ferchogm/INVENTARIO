@@ -42,6 +42,10 @@ export class ProductoAddPage implements OnInit  {
     });
   }
 
+  goBackToMenu() {
+    this.router.navigate(['/producto']);
+  }
+
   // Método para escanear el código de barras usando el escáner
   scanBarcode() {
     this.barcodeScanner.scan().then(barcodeData => {

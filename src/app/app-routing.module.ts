@@ -48,6 +48,12 @@ const routes: Routes = [
     path: 'reportes',
     loadChildren: () => import('./reportes/reportes.module').then( m => m.ReportesPageModule)
   },
+
+  {
+    path: 'stock-entrada',
+    loadChildren: () => import('./stock/stock-entrada/stock-entrada.module').then(m => m.StockEntradaPageModule)
+  },  
+
   { path: 'stock', loadChildren: () => import('./stock/stock.module').then(m => m.StockPageModule) },
   { path: 'producto', loadChildren: () => import('./producto/producto.module').then(m => m.ProductoPageModule) },
   { path: 'reportes', loadChildren: () => import('./reportes/reportes.module').then(m => m.ReportesPageModule) },

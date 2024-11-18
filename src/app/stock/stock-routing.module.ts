@@ -7,7 +7,11 @@ const routes: Routes = [
   {
     path: '',
     component: StockPage
+  },  {
+    path: 'stock-entrada',
+    loadChildren: () => import('./stock-entrada/stock-entrada.module').then( m => m.StockEntradaPageModule)
   }
+
 ];
 
 @NgModule({

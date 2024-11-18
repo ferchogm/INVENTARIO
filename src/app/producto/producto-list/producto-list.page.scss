@@ -89,3 +89,18 @@
       font-size: 10px;
     }
   }
+
+  .back-button {
+    position: fixed;
+    bottom: 20px; /* Distancia desde la parte inferior */
+    left: 20px;   /* Distancia desde la parte izquierda */
+    z-index: 100; /* Asegúrate de que esté encima de otros elementos */
+    background-color: var(--ion-color-primary); /* Color del botón */
+    color: white;
+    border-radius: 50%; /* Botón redondo */
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
