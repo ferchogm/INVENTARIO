@@ -15,6 +15,7 @@ import { jsPDF } from 'jspdf';
 import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { environment } from '../environments/environment';  // Asegúrate de tener tu archivo environment.ts configurado
 
@@ -24,6 +25,7 @@ import { environment } from '../environments/environment';  // Asegúrate de ten
     BrowserModule,
     IonicModule.forRoot(),  // Configuración de Ionic
     AppRoutingModule,
+    ReactiveFormsModule,
     
     // Configuración de Firebase
     AngularFireModule.initializeApp(environment.firebaseConfig),

@@ -86,7 +86,7 @@ export class StockEntradaPage {
 
 // Regresar a la página de inventarios
 goBackToInventario() {
-  this.router.navigate(['/inventario']);
+  this.router.navigate(['/stock']);
 }
 
   // Cerrar sesión

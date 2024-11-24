@@ -8,6 +8,7 @@ import { ProductoListPageRoutingModule } from './producto-list-routing.module';
 
 import { ProductoListPage } from './producto-list.page';
 
+
 @NgModule({
   imports: [
     CommonModule,

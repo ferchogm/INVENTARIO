@@ -32,23 +32,47 @@ export class ProductoListPage implements OnInit {
       });
   }
 
-  deleteProduct(id: string) {
-    this.firestore
-      .collection('products')
-      .doc(id)
-      .delete()
-      .then(() => {
-        console.log('Producto eliminado con éxito');
-      })
-      .catch((error) => {
-        console.error('Error al eliminar el producto: ', error);
-      });
+  async deleteProduct(id: string) {
+    // Muestra una alerta de confirmación
+    const alert = await this.alertController.create({
+      header: 'Confirmar eliminación',
+      message: '¿Estás seguro de que deseas eliminar este producto?',
+      buttons: [
+        {
+          text: 'Cancelar',
+          role: 'cancel',
+          handler: () => {
+            console.log('Eliminación cancelada');
+          },
+        },
+        {
+          text: 'Eliminar',
+          handler: () => {
+            // Si se confirma, elimina el producto
+            this.firestore
+              .collection('products')
+              .doc(id)
+              .delete()
+              .then(() => {
+                console.log('Producto eliminado con éxito');
+              })
+              .catch((error) => {
+                console.error('Error al eliminar el producto: ', error);
+              });
+          },
+        },
+      ],
+    });
+
+    // Presenta la alerta al usuario
+    await alert.present();
   }
 
-  editProduct(product: any) {
-    // Navega a la página de edición pasando el ID del producto como parámetro
-    this.router.navigate(['/producto-edit', product.id]);
-  }
+ editProduct(product: any) {
+  // Navega a la página de edición pasando el ID del producto como parámetro
+  console.log('Navegando a la edición del producto:', product); // Para depurar
+  this.router.navigate(['producto-edit', product.id]);
+}
 
   goBackToMenu() {
     this.router.navigate(['/producto']);

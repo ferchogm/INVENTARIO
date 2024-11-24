@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title class="header">Editar Producto</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="inventario-content">
+  <form [formGroup]="productoForm" (ngSubmit)="saveProducto()">
+    <ion-item class="input-item">
+      <ion-label position="floating">Nombre</ion-label>
+      <ion-input formControlName="name"></ion-input>
+    </ion-item>
+    <ion-item class="input-item">
+      <ion-label position="floating">Categoría</ion-label>
+      <ion-input formControlName="category"></ion-input>
+    </ion-item>
+    <ion-item class="input-item">
+      <ion-label position="floating">Stock</ion-label>
+      <ion-input type="number" formControlName="stock"></ion-input>
+    </ion-item>
+    <ion-item class="input-item">
+      <ion-label position="floating">Código de Barras</ion-label>
+      <ion-input formControlName="barcode"></ion-input>
+    </ion-item>
+    <ion-button class="menu-button" expand="block" type="submit" [disabled]="productoForm.invalid">
+      Guardar Cambios
+    </ion-button>
+  </form>
+</ion-content>

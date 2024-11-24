@@ -19,7 +19,11 @@ const routes: Routes = [
   {
     path: 'producto-list',
     loadChildren: () => import('./producto-list/producto-list.module').then( m => m.ProductoListPageModule)
+  },  {
+    path: 'producto-edit',
+    loadChildren: () => import('./producto-edit/producto-edit.module').then( m => m.ProductoEditPageModule)
   }
+
 
 ];
 
