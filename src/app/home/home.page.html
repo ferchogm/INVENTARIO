@@ -2,7 +2,7 @@
   <ion-toolbar color="primary">
     <ion-title class="header">Menú Principal</ion-title>
     <ion-buttons slot="end">
-      <ion-button (click)="onLogout()" color="light" class="logout-button">
+      <ion-button (click)="onLogout()" class="logout-button">
         <ion-icon name="log-out"></ion-icon>
       </ion-button>
     </ion-buttons>
@@ -14,19 +14,35 @@
     
     <ion-row>
       <ion-col>
-        <ion-button class="menu-button" expand="block" shape="round" routerLink="/inventario">Inventario</ion-button>
+        <!-- Botón Inventario -->
+        <ion-button expand="block" class="menu-button-inventarios" routerLink="/inventario">
+          <ion-icon slot="start" name="cube"></ion-icon>
+          Inventario
+        </ion-button>
       </ion-col>
     
       <ion-col>
-        <ion-button class="menu-button" expand="block" shape="round" routerLink="/categories">Categorías</ion-button>
+        <!-- Botón Categorías -->
+        <ion-button expand="block" class="menu-button-categorias" routerLink="/categories">
+          <ion-icon slot="start" name="list"></ion-icon>
+          Categorías
+        </ion-button>
       </ion-col>
     </ion-row>
     <ion-row>
       <ion-col>
-        <ion-button class="menu-button" expand="block" shape="round" routerLink="/reports">Reportes</ion-button>
+        <!-- Botón Reportes -->
+        <ion-button expand="block" class="menu-button-reportes" routerLink="/reports">
+          <ion-icon slot="start" name="analytics"></ion-icon> 
+          Reportes
+        </ion-button>
       </ion-col>
       <ion-col>
-        <ion-button class="menu-button" expand="block" shape="round" routerLink="/users">Usuarios</ion-button>
+            <!-- Botón Usuarios -->
+        <ion-button expand="block" class="menu-button-usuarios" routerLink="/users">
+          <ion-icon slot="start" name="people"></ion-icon> 
+          Usuarios
+        </ion-button>
       </ion-col>
     </ion-row>
   </ion-grid>

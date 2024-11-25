@@ -39,6 +39,51 @@ ion-button.menu-button {
   border-radius: 10px;
 }
 
+ion-button.menu-button-inventarios {
+  --background: #0b7350; /* Color azul de los botones */
+  --background-hover: #c3e5b3; /* Azul más oscuro al pasar el cursor */
+  --background-activated: #063507;
+  color: white;
+  height: 60px;
+  font-size: 16px;
+  margin-bottom: 15px;
+  border-radius: 10px;
+}
+
+ion-button.menu-button-categorias {
+  --background: #255b9c; /* Color azul de los botones */
+  --background-hover: #87a3bf; /* Azul más oscuro al pasar el cursor */
+  --background-activated: #1e4b76;
+  color: white;
+  height: 60px;
+  font-size: 16px;
+  margin-bottom: 15px;
+  border-radius: 10px;
+}
+
+
+ion-button.menu-button-reportes {
+  --background: #a6a220; /* Color azul de los botones */
+  --background-hover: #dde1b7; /* Azul más oscuro al pasar el cursor */
+  --background-activated: #333106;
+  color: white;
+  height: 60px;
+  font-size: 16px;
+  margin-bottom: 15px;
+  border-radius: 10px;
+}
+
+ion-button.menu-button-usuarios {
+  --background: #cb2f5e; /* Color azul de los botones */
+  --background-hover: #bc65a9; /* Azul más oscuro al pasar el cursor */
+  --background-activated: #500a25;
+  color: white;
+  height: 60px;
+  font-size: 16px;
+  margin-bottom: 15px;
+  border-radius: 10px;
+}
+
 .logout-button {
   color: white; // Cambia el color del texto del botón a blanco
   --background: transparent; // Fondo transparente si deseas que sea solo el icono

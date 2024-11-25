@@ -81,7 +81,7 @@ export class UsersPage implements OnInit {
 
   // Regresar a la página de inventarios
   goBackToInventario() {
-    this.router.navigate(['/inventario']);
+    this.router.navigate(['/home']);
   }
 
   // Cerrar sesión

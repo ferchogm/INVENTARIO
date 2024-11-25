@@ -25,7 +25,7 @@
   .header {
     text-align: center;
     justify-content: center;
-    background-color: #3971b5; /* Azul para la cabecera */
+    background-color: #a6a220; /* Azul para la cabecera */
     width: 100%;
     padding: 20px 0;
     color: white;
@@ -95,8 +95,8 @@
     bottom: 20px; /* Distancia desde la parte inferior */
     left: 20px;   /* Distancia desde la parte izquierda */
     z-index: 100; /* Asegúrate de que esté encima de otros elementos */
-    background-color: var(--ion-color-primary); /* Color del botón */
-    color: white;
+    --background: #a6a220; /* Color del botón */
+    --color: white;
     border-radius: 50%; /* Botón redondo */
     width: 50px;
     height: 50px;
@@ -112,12 +112,24 @@
   }
 
   ion-button.menu-button {
-    --background: #3971b5; /* Color azul de los botones */
-    --background-hover: #2c5d8e; /* Azul más oscuro al pasar el cursor */
-    --background-activated: #1e4b76;
+    --background: #a6a220; /* Color azul de los botones */
+    --background-hover: #dde1b7; /* Azul más oscuro al pasar el cursor */
+    --background-activated: #333106;
     color: white;
     height: 60px;
     font-size: 16px;
     margin-bottom: 15px;
     border-radius: 10px;
+  }
+
+  .logout-button {
+    color: white; // Cambia el color del texto del botón a blanco
+    background: #a6a220; // Fondo transparente si deseas que sea solo el icono
+    border-color: transparent; // Sin borde
+  }
+  
+  .home-button {
+    color: white; // Cambia el color del texto del botón a blanco
+    background: #a6a220; // Fondo transparente si deseas que sea solo el icono
+    border-color: transparent; // Sin borde
   }

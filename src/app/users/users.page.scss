@@ -9,8 +9,8 @@ ion-content {
     bottom: 20px; /* Distancia desde la parte inferior */
     left: 20px;   /* Distancia desde la parte izquierda */
     z-index: 100; /* Asegúrate de que esté encima de otros elementos */
-    background-color: var(--ion-color-primary); /* Color del botón */
-    color: white;
+    --background: #cb2f5e; /* Color del botón */
+    --color: white;
     border-radius: 50%; /* Botón redondo */
     width: 50px;
     height: 50px;
@@ -30,7 +30,7 @@ ion-content {
   }
   
   .header {
-    background-color: #3971b5; /* Azul para la cabecera */
+    background-color: #cb2f5e; /* Azul para la cabecera */
     width: 100%;
     padding: 20px 0;
     color: white;
@@ -46,9 +46,9 @@ ion-content {
   }
   
   ion-button.menu-button {
-    --background: #3971b5; /* Color azul de los botones */
-    --background-hover: #2c5d8e; /* Azul más oscuro al pasar el cursor */
-    --background-activated: #1e4b76;
+    --background: #cb2f5e; /* Color azul de los botones */
+  --background-hover: #bc65a9; /* Azul más oscuro al pasar el cursor */
+  --background-activated: #500a25;
     color: white;
     height: 60px;
     font-size: 16px;
@@ -60,23 +60,23 @@ ion-content {
     width: 100%;
     border-collapse: collapse;
     margin-top: 20px;
-    background-color: #2c5d8e; /* Fondo azul oscuro para la tabla */
+    background-color: #bea3be; /* Fondo azul oscuro para la tabla */
   }
   
   .users-table th, .users-table td {
-    border: 1px solid #ddd;
+    border: 1px solid #eed4ee;
     padding: 8px;
     text-align: left;
   }
   
   .users-table th {
-    background-color: #3971b5;
+    background-color: #845d7f;
     color: white;
     font-weight: bold;
   }
   
   .users-table tr:nth-child(even) {
-    background-color: #5681b7;
+    background-color: #b671ad;
   }
   
   .users-table tr:hover {
@@ -86,4 +86,16 @@ ion-content {
   .actions {
     display: flex;
     gap: 5px; /* Espacio entre los botones */
+  }
+
+  .logout-button {
+    color: white; // Cambia el color del texto del botón a blanco
+    background: #cb2f5e; // Fondo transparente si deseas que sea solo el icono
+    border-color: transparent; // Sin borde
+  }
+  
+  .home-button {
+    color: white; // Cambia el color del texto del botón a blanco
+    background: #cb2f5e; // Fondo transparente si deseas que sea solo el icono
+    border-color: transparent; // Sin borde
   }

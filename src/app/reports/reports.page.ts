@@ -135,7 +135,7 @@ private formatDate(timestamp: any): string {
   }
 
   goBackToMenu() {
-    this.router.navigate(['/producto']);
+    this.router.navigate(['/home']);
   }
 
 }
