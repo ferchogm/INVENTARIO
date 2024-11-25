@@ -1,4 +1,4 @@
-import { BarcodeScanner } from '@ionic-native/barcode-scanner/ngx';
+
 import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { AlertController } from '@ionic/angular';
 import { ToastController } from '@ionic/angular';
@@ -21,7 +21,6 @@ export class ProductoAddPage implements OnInit  {
   categories: any[] = []; // Arreglo para almacenar las categorías
 
   constructor(
-    private barcodeScanner: BarcodeScanner,
     private firestore: AngularFirestore,
     private alertController: AlertController,
     private toastCtrl: ToastController,
@@ -46,14 +45,7 @@ export class ProductoAddPage implements OnInit  {
     this.router.navigate(['/producto']);
   }
 
-  // Método para escanear el código de barras usando el escáner
-  scanBarcode() {
-    this.barcodeScanner.scan().then(barcodeData => {
-      this.product.barcode = barcodeData.text;  // Se asigna al objeto product
-    }).catch(err => {
-      this.presentToast('Error al escanear el código de barras: ' + err);
-    });
-  }
+  
 
   // Método para adicionar un producto a la base de datos con validación del ID
   async addProduct() {

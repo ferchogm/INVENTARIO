@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { BarcodeScanner } from '@ionic-native/barcode-scanner/ngx';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { ToastController } from '@ionic/angular';
 import { Router } from '@angular/router'; 
@@ -15,20 +14,13 @@ export class StockEntradaPage {
   quantityToAdd: number | null = null; // Cantidad a incrementar
 
   constructor(
-    private barcodeScanner: BarcodeScanner,
+    
     private firestore: AngularFirestore,
     private toastCtrl: ToastController,
     private router: Router
   ) {}
 
-  // Método para escanear el código de barras
-  scanBarcode() {
-    this.barcodeScanner.scan().then(barcodeData => {
-      this.barcode = barcodeData.text;
-    }).catch(err => {
-      this.presentToast('Error al escanear el código de barras: ' + err);
-    });
-  }
+ 
 
   // Método para consultar el producto en la base de datos
   consultProduct() {

@@ -8,7 +8,7 @@ import { AppRoutingModule } from './app-routing.module';
 
 
 //NUEVAS IMPORTACIONEA PARA 
-import { BarcodeScanner } from '@ionic-native/barcode-scanner/ngx'; // Importa el servicio
+
 import { jsPDF } from 'jspdf';
 
 // Firebase Imports
@@ -33,7 +33,7 @@ import { environment } from '../environments/environment';  // Asegúrate de ten
     AngularFirestoreModule  // Firestore de Firebase
   ],
   providers: [
-    BarcodeScanner,
+    
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
   ],
   bootstrap: [AppComponent],

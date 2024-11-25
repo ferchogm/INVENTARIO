@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { BarcodeScanner } from '@ionic-native/barcode-scanner/ngx';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { AlertController } from '@ionic/angular';
 
@@ -12,19 +11,11 @@ export class ProductoDeletePage {
   barcode: string = '';
 
   constructor(
-    private barcodeScanner: BarcodeScanner,
     private firestore: AngularFirestore,
     private alertController: AlertController
   ) {}
 
-  scanQR() {
-    this.barcodeScanner.scan().then(barcodeData => {
-      this.barcode = barcodeData.text;
-    }).catch(err => {
-      console.log('Error', err);
-    });
-  }
-
+  
   async deleteProduct() {
     if (this.barcode) {
       const productSnapshot = await this.firestore.collection('products', ref => ref.where('barcode', '==', this.barcode)).get().toPromise();
